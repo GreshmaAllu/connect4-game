@@ -1,0 +1,186 @@
+body {
+  font-family: 'Nunito', 'Helvetica Neue', sans-serif;
+  padding: 0.1px;
+  /* prevent margin overflow */
+  margin: 0;
+  background-image: url('https://img.freepik.com/free-vector/gradient-glassmorphism-background_23-2149447863.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 2rem;
+  color: rgb(223, 19, 216);
+}
+
+@media (max-width: 460px) {
+  .title {
+    font-size: 1.66rem;
+  }
+}
+
+.wrapper {
+  margin: 36px auto 0;
+  width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+@media (max-width: 460px) {
+  .wrapper {
+    margin: 20px auto 0;
+    width: 240px;
+  }
+}
+
+
+.board {
+  margin: auto;
+  background-color: rgb(26, 83, 96);
+  border-radius: 15px;
+  /* Shadow to the board */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) inset;
+  border-spacing: 10px;
+  padding: 10px;
+}
+
+.board button {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 0;
+  margin: 1px;
+  background: #c8c7c9;
+}
+
+.board button:hover {
+  filter: brightness(85%);
+}
+
+/* no focus rings by default... focus borders get added via js */
+.board button:focus {
+  outline: 0;
+}
+
+.board button::-moz-focus-inner {
+  border: 0;
+}
+
+.board button.red {
+  background: #9b2d1c;
+  background: linear-gradient(to bottom, #bc5353 0%, #4d0202 100%);
+}
+
+.board button.black {
+  background: #3bd997;
+  background: linear-gradient(to bottom, #4da46e 0%, #04391d 100%);
+}
+
+@media (max-width: 460px) {
+  .board button {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.play-again {
+  height: 0px;
+  overflow: hidden;
+}
+
+.play-again.show {
+  height: 40px;
+  transition: 0.75s;
+}
+
+.play-again-btn {
+  display: inline-block;
+  margin-bottom: 2em;
+  height: 40px;
+  line-height: 40px;
+  width: 50%;
+  background: mediumseagreen;
+  color: white;
+  text-decoration: none;
+  opacity: 0.9;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.play-again-btn:hover,
+.play-again-btn:focus {
+  background: #359660;
+}
+
+.play-again:hover {
+  opacity: 1;
+}
+
+.top-text {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: rgb(187, 82, 208);
+}
+
+@media (max-width: 460px) {
+  .top-text {
+    font-size: 0.66rem;
+  }
+}
+
+.primary {
+  color: rgb(220, 67, 141);
+  margin: 0 0 0.75rem;
+  font-weight: normal;
+}
+
+.primary .red,
+.primary .black {
+  position: relative;
+}
+
+.primary .red::after,
+.primary .black::after {
+  display: block;
+  width: 16px;
+  height: 16px;
+  content: "";
+  position: absolute;
+  right: 6px;
+  top: 8px;
+  border-radius: 50%;
+}
+
+.primary [contenteditable="true"] {
+  border-bottom: 1px solid rgb(153, 227, 194);
+  padding: 0 1.25em 0 0.25em;
+}
+
+.primary [contenteditable="true"].red::after {
+  background: linear-gradient(to bottom, #a13f36 0%, #a23737 100%);
+}
+
+.primary [contenteditable="true"].black::after {
+  background: linear-gradient(to bottom, #4e9b75 0%, #3e9360 100%);
+}
+
+.secondary {
+  color: #7a1564;
+  margin: 0;
+  font-weight: normal;
+}
+
+.secondary [contenteditable="true"] {
+  border-bottom: 1px solid #bbb;
+  padding: 0 1.25em 0 0.25em;
+}
+
+.center {
+  text-align: center;
+}
